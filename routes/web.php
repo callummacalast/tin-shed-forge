@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Disables the register route and redirects to the login to stop people  from registering for an account
 Route::get('/register', function() {
     return view('auth.login');
 });
@@ -30,14 +32,14 @@ Route::get('/about', function () {
 // });
 
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index']);
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'store']);
 
-Route::get('/gallery', function () {
-    return view('gallery');
-});
+
 Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index']);
 
 
-Auth::routes(['register' => false]);
+Auth::routes();
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'show']);

@@ -53,10 +53,13 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li class="nav-item">
+                                    <a href="/home" class="nav-link text-info">Admin Dashboard</a>
+                                </li>
                                 <li>
                                     <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();" class=" text-danger p-4">
+                                        document.getElementById('logout-form').submit();" class=" text-danger nav-link">
                                         Logout
                                     </a>
 
@@ -64,8 +67,10 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
+                               
                             </ul>
                         </li>
+                        
                     @endif
                     </ul>
 
