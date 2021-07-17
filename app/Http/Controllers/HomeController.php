@@ -27,8 +27,16 @@ class HomeController extends Controller
         return view('home');
     }
 
+<<<<<<< HEAD
     public function show(Contact $contact_details)
     {
         return view('home')->with('contact_details', $contact_details);
+=======
+    public function show()
+    {
+        $contacts = Contact::all();
+
+        return view('home', compact('contacts'));
+>>>>>>> 14a5e7ac15e21c4cc6f0636893ac9dcaf0dc55bb
     }
 }

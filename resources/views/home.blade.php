@@ -14,10 +14,14 @@
                 </div>
         </div>
     </div>
+<<<<<<< HEAD
 
     @foreach ($contact_details as $contact)
         <li>{{ $contact->contact_name }} </li>
     @endforeach
+=======
+  
+>>>>>>> 14a5e7ac15e21c4cc6f0636893ac9dcaf0dc55bb
 
     <table class="table">
   <thead class="thead-dark">
@@ -25,6 +29,7 @@
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Message</th>
+<<<<<<< HEAD
       <th scope="col">Status</th>
     </tr>
   </thead>
@@ -49,6 +54,24 @@
       <td>@twitter</td>
     </tr>
   </tbody>
+=======
+      <th scope="col">Done</th>
+    </tr>
+  </thead>
+
+
+      @foreach($contacts as $contact)
+        <tr>
+      <td>name: {{ $contact->contact_name  }}</td>
+      <td>email: {{ $contact->contact_email  }}</td>
+      <td>message: {{ $contact->contact_message  }}</td>
+      <td><input type="checkbox"> </td>
+        </tr>
+
+      @endforeach
+
+
+>>>>>>> 14a5e7ac15e21c4cc6f0636893ac9dcaf0dc55bb
 </table>
 
 
