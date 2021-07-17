@@ -27,8 +27,8 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function show(Contact $contact)
+    public function show(Contact $contact_details)
     {
-        return view('home', $contact);
+        return view('home')->with('contact_details', $contact_details);
     }
 }

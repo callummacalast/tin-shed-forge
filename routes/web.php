@@ -2,6 +2,7 @@
 
 // use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,4 +43,10 @@ Auth::routes();
 
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'show']);
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'show']);
+
+Route::get('/home', function () {
+    $contacts = DB::table('contact_details')->get();
+
+    return view('home', ['contact_details' => $contacts]);
+});

@@ -31,6 +31,8 @@
                 <br>
                 <button type="submit" class="mt-2 btn btn-outline-primary btn-block">Submit</button>
         </form>
+
+
     </main>
 
 @endsection

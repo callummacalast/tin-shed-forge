@@ -14,30 +14,34 @@
                 </div>
         </div>
     </div>
-    {{ $contact_details->contact_name }}
+
+    @foreach ($contact_details as $contact)
+        <li>{{ $contact->contact_name }} </li>
+    @endforeach
 
     <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Message</th>
+      <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody>
+  @foreach ($contact_details as $name)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <!-- <th>hello</th> -->
+      <th>{{ $name->contact_name }}</th>
     </tr>
+    @endforeach
+
+    @foreach ($contact_details as $email)
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <th scope="row">{{ $email->contact_email }}</th>
+      <td></td>
     </tr>
+    @endforeach
     <tr>
       <th scope="row">3</th>
       <td>Larry</td>
@@ -47,35 +51,6 @@
   </tbody>
 </table>
 
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+
 </div>
 @endsection
